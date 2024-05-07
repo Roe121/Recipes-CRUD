@@ -52,7 +52,7 @@
 									<td>
 
 										<a href="{{ path('app_ingredient_edit', {'id': ingredient.id}) }}" class="btn btn-secondary">Edit</a>
-										<a href="#" class="btn btn-danger">Delete</a>
+										<a href="{{ path('app_ingredient_delete', {'id': ingredient.id}) }}" class="btn btn-danger">Delete</a>
 									</td>
 								</tr>
 							{% endfor %}
