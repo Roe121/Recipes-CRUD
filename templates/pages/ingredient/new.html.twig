@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block title %}New Ingredient{% endblock %}
+
+{% block body %}
+    <div class="container">
+         <h1>New Ingredient</h1>
+
+    {{ form (form)}}
+
+    <a href="{{ path('app_ingredient') }}">back to list</a>
+    </div>
+        
+
+{% endblock %}
