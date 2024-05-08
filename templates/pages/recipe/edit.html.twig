@@ -1,15 +1,15 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Edit Ingredient{% endblock %}
+{% block title %}Edit Recipe{% endblock %}
 
 {% block body %}
     <div class="container">
-         <h1>Edit an ingredient</h1>
+         <h1>Edit a recipe</h1>
 
     {{ form (form)}}
 
     <a class="btn btn-primary mt-3"
-    href="{{ path('app_ingredient') }}">back to list</a>
+    href="{{ path('app_recipe') }}">back to list</a>
     </div>
         
 
