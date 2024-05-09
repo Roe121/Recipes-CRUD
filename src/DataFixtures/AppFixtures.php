@@ -8,14 +8,17 @@ use App\Entity\Ingredient;
 use App\Entity\Recipe;
 use Faker\Factory;
 use Faker\Generator;
+use App\Entity\User;
 
 class AppFixtures extends Fixture
 {
     private Generator  $faker;
 
+
     public function __construct()
     {
         $this->faker = Factory::create('fr_FR');
+
     }
 
     public function load(ObjectManager $manager): void
@@ -49,6 +52,20 @@ class AppFixtures extends Fixture
 
 
             $manager->persist($recipe);
+        }
+
+        # users
+
+        // Create 20 users
+        for ($i = 0; $i < 10; $i++) {
+            $user = new User();
+            $user->setFullName($this->faker->name());
+            $user->setPseudo($this->faker->userName());
+            $user->setEmail($this->faker->email());
+            $user->setPlainPassword('password');
+            $user->setRoles(['ROLE_USER']);
+
+            $manager->persist($user);
         }
 
         $manager->flush();
